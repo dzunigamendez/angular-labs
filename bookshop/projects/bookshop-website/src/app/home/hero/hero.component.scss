@@ -1,0 +1,27 @@
+.bs-hero {
+  position: relative;
+  z-index: 1;
+  min-height: 300px;
+  background: center center / cover no-repeat;
+
+  &:after {
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    content: "";
+    background: var(--white);
+    opacity: 0.9;
+  }
+}
+
+.bs-deal {
+  display: flex;
+  margin: 0;
+  padding-top: 48px;
+  align-items: center;
+  justify-content: center;
+  text-transform: uppercase;
+}

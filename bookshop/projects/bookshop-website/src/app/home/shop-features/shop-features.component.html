@@ -1,0 +1,15 @@
+<section class="bs-shop-features">
+  <div class="bs-container">
+    <ul class="bs-shop-features__list">
+      <li class="bs-shop-features__item" *ngFor="let feature of features">
+        <figure class="bs-shop-feature">
+          <fa-icon [icon]="feature.icon" size="2x"></fa-icon>
+          <figcaption>
+            <h3>{{feature.title}}</h3>
+            <p>{{feature.text}}</p>
+          </figcaption>
+        </figure>
+      </li>
+    </ul>
+  </div>
+</section>

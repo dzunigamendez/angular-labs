@@ -1,0 +1,48 @@
+.bs-shop-features {
+  border: solid var(--border);
+  border-width: 1px 0;
+  background: var(--light);
+  box-shadow: 3px 5px 21px rgba(35, 35, 35, 0.15);
+}
+
+.bs-shop-features__list {
+  display: flex;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.bs-shop-features__item {
+  border: solid var(--border);
+  border-width: 0 1px;
+
+  & + & {
+    border-width: 0 1px 0 0;
+  }
+}
+
+.bs-shop-feature {
+  display: flex;
+  align-items: center;
+  margin: 0;
+  padding: 24px 16px;
+
+  figcaption {
+    margin-left: 24px;
+  }
+
+  h3 {
+    font-size: 16px;
+    line-height: 1.6;
+    font-weight: 600;
+    text-transform: uppercase;
+  }
+
+  p {
+    font-size: 13px;
+    line-height: 1.6;
+    margin: 0;
+  }
+}
+
+

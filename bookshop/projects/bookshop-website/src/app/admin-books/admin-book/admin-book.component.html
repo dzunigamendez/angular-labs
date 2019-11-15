@@ -1,0 +1,69 @@
+<section class="bs-admin-book">
+  <div class="bs-container">
+    <h3>Book</h3>
+    <form #formCtr="ngForm" class="bs-admin-book__form" (ngSubmit)="saveBook(formCtr)">
+      <div class="form-group" *ngIf="!isNew">
+        <label for="book-id">Id</label>
+        <input id="book-id" name="id" class="form-control" [(ngModel)]="book.id" readonly>
+      </div>
+      <div class="form-group">
+        <label for="book-title">Title</label>
+        <input id="book-title" name="title" class="form-control" [(ngModel)]="book.title" #titleCtrl="ngModel"
+          [ngClass]="{'is-invalid': (titleCtrl.touched || formCtr.submitted) && titleCtrl.invalid}" required>
+        <div class="invalid-feedback" *ngIf="(titleCtrl.touched || formCtr.submitted) && titleCtrl.errors">
+          <div *ngIf="titleCtrl.errors.required">
+            Title is required
+          </div>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="book-author">Author</label>
+        <input id="book-author" name="author" class="form-control" [(ngModel)]="book.author" #authorCtrl="ngModel"
+          [ngClass]="{'is-invalid': (authorCtrl.touched || formCtr.submitted) && authorCtrl.invalid}" required>
+        <div class="invalid-feedback" *ngIf="(authorCtrl.touched || formCtr.submitted) && authorCtrl.errors">
+          <div *ngIf="authorCtrl.errors.required">
+            Author is required
+          </div>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="book-price">Price</label>
+        <input id="book-price" name="price" type="number" class="form-control" [(ngModel)]="book.price"
+          #priceCtrl="ngModel" [ngClass]="{'is-invalid': (priceCtrl.touched || formCtr.submitted) && priceCtrl.invalid}"
+          required>
+        <div class="invalid-feedback" *ngIf="(priceCtrl.touched || formCtr.submitted) && priceCtrl.errors">
+          <div *ngIf="priceCtrl.errors.required">
+            Price is required
+          </div>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="book-reviews">Reviews</label>
+        <input id="book-reviews" name="reviews" type="number" class="form-control" [(ngModel)]="book.reviews"
+          #reviewsCtrl="ngModel"
+          [ngClass]="{'is-invalid': (reviewsCtrl.touched || formCtr.submitted) && reviewsCtrl.invalid}" required>
+        <div class="invalid-feedback" *ngIf="(reviewsCtrl.touched || formCtr.submitted) && reviewsCtrl.errors">
+          <div *ngIf="reviewsCtrl.errors.required">
+            Reviews is required
+          </div>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="book-rating">Rating</label>
+        <input id="book-rating" name="rating" type="number" class="form-control" [(ngModel)]="book.rating"
+          #ratingCtrl="ngModel"
+          [ngClass]="{'is-invalid': (ratingCtrl.touched || formCtr.submitted) && ratingCtrl.invalid}" required>
+        <div class="invalid-feedback" *ngIf="(ratingCtrl.touched || formCtr.submitted) && ratingCtrl.errors">
+          <div *ngIf="ratingCtrl.errors.required">
+            Title is required
+          </div>
+        </div>
+      </div>
+      <div>
+        <button class="btn btn-primary" type="submit">Save</button>
+        &nbsp;
+        <a class="btn btn-outline-primary" routerLink="/admin-books">Cancel</a>
+      </div>
+    </form>
+  </div>
+</section>

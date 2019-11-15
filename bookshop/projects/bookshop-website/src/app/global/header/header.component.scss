@@ -1,0 +1,19 @@
+.bs-header {
+  position: relative;
+  z-index: 2;
+  box-shadow: 0 0 11px 2px rgba(0, 0, 0, 0.2);
+}
+
+.bs-header__bar {
+  padding: 24px 0;
+  box-shadow: 0 0 13px 1px rgba(0, 0, 0, 0.09);
+}
+
+.bs-header__container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.bs-header__util {
+  display: flex;
+}

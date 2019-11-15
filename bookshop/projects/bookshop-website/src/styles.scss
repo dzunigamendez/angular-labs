@@ -1,0 +1,12 @@
+/* You can add global styles to this file, and also import other style files */
+$font-family-base: "Montserrat", sans-serif;
+@import "bootstrap";
+
+:root {
+  --border: #e1e1e1;
+}
+
+.bs-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}

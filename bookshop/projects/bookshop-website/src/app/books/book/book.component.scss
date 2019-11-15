@@ -1,0 +1,14 @@
+.bs-book {
+  display: flex;
+  align-items: flex-start;
+}
+
+.bs-book__image {
+  width: 200px;
+  margin-right: 24px;
+}
+
+.bs-book__rating,
+.bs-book__reviews {
+  margin-left: 24px;
+}

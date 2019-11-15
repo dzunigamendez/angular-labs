@@ -1,0 +1,8 @@
+<section class="bs-logout">
+  <div class="bs-container">
+    <div class="jumbotron" *ngIf="userProfile$ | async as userProfile">
+      <h3>{{userProfile.name}}</h3>
+      <button class="btn btn-danger" (click)="logout()">Logout</button>
+    </div>
+  </div>
+</section>

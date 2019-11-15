@@ -1,0 +1,19 @@
+<nav class="bs-menu">
+  <div class="bs-container">
+    <ul class="nav justify-content-center">
+
+      <li class="nav-item" *ngFor="let menuItem of menuItems">
+        <a class="nav-link" [routerLink]="menuItem.path" routerLinkActive="active">
+          {{menuItem.label}}
+        </a>
+      </li>
+
+      <li class="nav-item" *ngIf="userProfile$ | async">
+        <a class="nav-link" routerLink="/admin-books" routeLinkActive="active">
+          Admin Books
+        </a>
+      </li>
+
+    </ul>
+  </div>
+</nav>

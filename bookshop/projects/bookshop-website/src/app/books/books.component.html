@@ -1,0 +1,12 @@
+<section class="bs-books">
+  <div class="bs-container">
+    <ul class="bs-books__list">
+      <li class="bs-books__item" *ngFor="let book of books">
+        <app-book [book]="book">
+          <button class="btn btn-primary">Add to Cart</button>
+          <a routerLink="/books/{{book.id}}" class="btn btn-info">View Details</a>
+        </app-book>
+      </li>
+    </ul>
+  </div>
+</section>

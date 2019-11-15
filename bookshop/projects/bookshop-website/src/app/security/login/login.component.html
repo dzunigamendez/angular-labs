@@ -1,0 +1,42 @@
+<div class="bs-login">
+  <div class="bs-container">
+    <div class="card">
+      <div class="card-header">
+        LOGIN
+      </div>
+      <div class="card-body">
+        <form #formCtrl="ngForm" (ngSubmit)="login(formCtrl)">
+          <div class="form-group">
+            <label for="login-email">
+              Email
+            </label>
+            <input id="login-email" type="email" name="email" class="form-control" [(ngModel)]="credentials.email"
+              #emailField="ngModel" [ngClass]="{'is-invalid': emailField.touched && emailField.invalid}" required email>
+            <div class="invalid-feedback" *ngIf="emailField.touched && emailField.errors">
+              <div *ngIf="emailField.errors.required">
+                Email is required
+              </div>
+              <div *ngIf="emailField.errors.email">
+                Email is invalid
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="login-password">
+              Password
+            </label>
+            <input id="login-password" type="password" name="password" class="form-control"
+              [(ngModel)]="credentials.password" #passwordField="ngModel"
+              [ngClass]="{'is-invalid': passwordField.touched && passwordField.invalid}" required>
+            <div class="invalid-feedback" *ngIf="passwordField.touched && passwordField.errors">
+              <div *ngIf="passwordField.errors.required">
+                Password is required
+              </div>
+            </div>
+          </div>
+          <button type="submit" class="btn btn-primary">Login</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

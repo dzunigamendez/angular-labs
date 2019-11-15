@@ -1,0 +1,36 @@
+<section class="bs-admin-books">
+  <div class="bs-container">
+    <h3>Books</h3>
+    <table class="table">
+      <thead>
+        <tr>
+          <th colspan="6">
+            <a class="btn btn-primary" routerLink="/admin-books/book">New Book</a>
+          </th>
+        </tr>
+        <tr>
+          <th>Id</th>
+          <th>Title</th>
+          <th>Author</th>
+          <th>Price</th>
+          <th>Published Date</th>
+          <th>...</th>
+        </tr>
+      </thead>
+      <tbody *ngIf="books$ | async as books">
+        <tr *ngFor="let book of books">
+          <td>{{book.id}}</td>
+          <td>{{book.title}}</td>
+          <td>{{book.author}}</td>
+          <td>{{book.price}}</td>
+          <td>{{book.publishedDate}}</td>
+          <td>
+            <a routerLink="/admin-books/book/{{book.id}}" class="btn btn-primary">Edit</a>
+            &nbsp;
+            <button (click)="deleteBook(book.id)" class="btn btn-danger">Delete</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
